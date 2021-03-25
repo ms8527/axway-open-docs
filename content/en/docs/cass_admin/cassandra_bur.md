@@ -24,6 +24,7 @@ You must read the following before you perform any of the instructions in this t
 * These instructions use the Cassandra snapshot functionality. A *snapshot* is a set of hard links for the current data files in a keyspace.
   While the snapshot does not take up noticeable diskspace, it will cause stale data files not to be cleaned up. This is because a snapshot directory is created under each table directory and will contain hard links to all table data files. When Cassandra cleans up the stale table data files, the snapshot files will remain. Therefore, it is critical to remove them promptly. The example backup script takes care of this by deleting the snapshot files at the end of the backup.
 * For safety reasons, the backup location should *not* be on the same disk as the Cassandra data directory, and it also must have enough free space to contain the keyspace.
+* If backing up and restoring Cassandra data between different environments with different domain ids, you **must** additionally re-encrypt the data using the KPS Admin Re-encrypt command. This is required as the encryption scheme used for sensitive KPS data uses a master salt which is based on the domain Id of the environment. Not re-encrypting the data will result in less performant decryption. For more information see, [KPS Admin Re-Encrypt](/docs/apim_policydev/apigw_kps/how_to_use_kpsadmin_command/#re-encrypt-the-kps-data).
 
 {{% /alert %}}
 
@@ -133,6 +134,8 @@ To restore a keyspace:
     * The tool will prompt the user to perform manual actions on other nodes in the cluster
 
 {{< alert title="Note" color="primary" >}}You must read the manual actions carefully. Some actions need to be performed on every node of the cluster, others only on the other nodes (not on the one where the script is running).{{< /alert >}}
+
+{{< alert title="Note" color="primary" >}}You must run the KPS Admin tool Re-encrypt command if migrating data between environments with different domain ids. For more information, see [KPS Admin Re-Encrypt](/docs/apim_policydev/apigw_kps/how_to_use_kpsadmin_command/#re-encrypt-the-kps-data).{{< /alert >}}
 
 ### Back up and restore a cluster with multiple nodes
 
@@ -318,6 +321,8 @@ To manually restore a keyspace:
    ```
 9. On the Cassandra seed node, run the Cassandra reload the indexes script.
 10. Start the API Gateway instances.
+
+{{< alert title="Note" color="primary" >}}You must run the KPS Admin tool Re-encrypt command if migrating data between environments with different domain ids. For more information, see [KPS Admin Re-Encrypt](/docs/apim_policydev/apigw_kps/how_to_use_kpsadmin_command/#re-encrypt-the-kps-data).{{< /alert >}}
 
 ### Sample Cassandra restore snapshot script
 
