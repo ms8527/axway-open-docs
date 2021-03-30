@@ -82,11 +82,11 @@ The rest of the prompts relate to the Istio agents. Continue on with the section
 
 1. If Istio is not installed, select No.
 
-   ```bash
-   ? Use existing Istio installation?:  (Use arrow keys)
-     Yes
-   ❯ No
-   ```
+    ```bash
+    ? Use existing Istio installation?:  (Use arrow keys)
+      Yes
+    ❯ No
+    ```
 
 2. Enter the domain name of the cluster. If you do not know the domain name for the cluster at this time, leave the prompt blank and you will not be asked any details about the protocol, port, or certificate.
 
