@@ -43,9 +43,9 @@ If you are a member of multiple Amplify organizations, select an organization an
 
 1. Run the `install` command to begin the installation of the Axway Istio agents. The first section of the installation collects information about the Istio deployment.
 
-   ```bash
-   axway central install agents
-   ```
+  ```bash
+  axway central install agents
+  ```
 
    The installation displays the following prompts.
 
