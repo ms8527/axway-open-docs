@@ -12,47 +12,59 @@ You can find the release notes for all service packs on [Axway Support](https://
 
 ## Version 7.7
 
-|Update       |Highlights        |Deprecated features  |Release Date|
-|---------    |---               |---                  |---         |
-|[7.7.20201130](/docs/apim_relnotes/20201130_apimgr_relnotes/)|JVM Flag added to allow orgAdmins to manage API Lifecycles||30/11/2020
-||OAS3 runtime bugs resolved||
-||Simplified Cassandra backup and restore scripts||
-|[7.7.20200930](/docs/apim_relnotes/20200930_apimgr_relnotes/)|API Manager Remote Hosts aligned with PolicyStudio functionality | API Management REST APIs versions 1.1 and 1.2 are deprecated. |30/09/2020|
-|                                                                                                |YAML-based configuration store (Technical preview) |Swagger version 1.1 is deprecated ||
-|                                                                                                |Database integration updates |The requirement to run `update-apimanager.py` has been removed from the upgrade steps. | |
-|                                                                                                |User membership in multiple organizations. | | |
-|                                                                                                |New API Management REST API version 1.4. | | |
-|                                                                                                |OpenJDK JRE update to v8u265. | | |
+|Update       |Highlights        |Important Changes    |Deprecated features  |Release Date|
+|---------    |---               |---                  |---                  |---         |
+|[7.7.20210330](/docs/apim_relnotes/20210330_apimgr_relnotes/)|Updated cipher scheme | | |30/03/2021 |
+||Passphrase policy enforcement| | |
+||Security enhancements to JWT Sign and Verify filters| | |
+||Automatic upgrade of projects in Policy Studio| | |
+||API Manager request rate limiter| | |
+||HTTP strict transport security profile| | |
+||Certification with MySQL 8| | |
+||YAML configuration store (Technical preview capability)| | |
+|[7.7.20210130](/docs/apim_relnotes/20210130_apimgr_relnotes/)|Option to disable SSL renegotiation is added for HTTPS listeners and Connection filters | | |30/01/2021 |
+||Backup passphrase parameter to restore operation in kpsadmin| | |
+||Content Security Policy header to improve security| | |
+||YAML configuration store (Technical preview capability)| | |
+|[7.7.20201130](/docs/apim_relnotes/20201130_apimgr_relnotes/)|JVM Flag added to allow orgAdmins to manage API Lifecycles|||30/11/2020
+||OAS3 runtime bugs resolved|||
+||Simplified Cassandra backup and restore scripts|||
+|[7.7.20200930](/docs/apim_relnotes/20200930_apimgr_relnotes/)|API Manager Remote Hosts aligned with PolicyStudio functionality || API Management REST APIs versions 1.1 and 1.2 are deprecated. |30/09/2020|
+|                                                                                                |YAML-based configuration store (Technical preview) | |Swagger version 1.1 is deprecated ||
+|                                                                                                |Database integration updates | |The requirement to run `update-apimanager.py` has been removed from the upgrade steps. | |
+|                                                                                                |User membership in multiple organizations. | | | |
+|                                                                                                |New API Management REST API version 1.4. | | | |
+|                                                                                                |OpenJDK JRE update to v8u265. | | | |
 |                                                                                                |Changes to the way API Gateway verifies wildcarded certificates. | | |
-|                                                                                                |The Groovy version used by the Scripting Filter is updated to 2.5.13. | | |
-|[7.7.20200730](/docs/apim_relnotes/20200730_apimgr_relnotes/)|ICAP filter improvements. | |30/07/2020 |
-|                                                                                                |Improved upgrade instructions. | | |
-|                                                                                                |MSSQL Database Support. | | |
-|[7.7.20200530](/docs/apim_relnotes/20200530_apimgr_relnotes/)|Updated OS Support. | |30/05/2020 |
-|                                                                                                |Improved upgrade experience. | | |
-|                                                                                                |Log4j file format changed to YAML. | | |
-|                                                                                                |Swagger parser libs updated. | | |
-|[7.7.20200330](/docs/apim_relnotes/20200330_apimgr_relnotes/)|Added TLS 1.3 support. |FIPS support was removed. |30/03/2020 |
-|                                                                                                |OpenSSL updated to v1.1.1. |McAfee Sophos Clam AV embedded antivirus scanners were removed.||
-|[7.7.20200130](/docs/apim_relnotes/20200130_apimgr_relnotes/)|Swagger 2.0 enhancements. |API Tester was removed from installation.|30/01/2020 |
-|                                                                                                |Open API Specification (OAS) 3.0 enhancements. |RAML support was removed.| |
-|                                                                                                |Try it improvements. |Export of back-end APIs is not supported for OAS3 or WSDL APIs.| |
-|                                                                                                |Usage tracking improvements. |Documentation is no longer provided in PDF format.| |
-|                                                                                                |Back-end API improvements. | | |
-|                                                                                                |API documentation enhancements. | | |
-|                                                                                                |Multi organization (beta). | | |
-|                                                                                                |Increased validation of WSDLs. | | |
-|                                                                                                |Filebeat updated to v6.2.2. | | |
-|                                                                                                |Increased validation of users endpoint. | | |
-|                                                                                                |Undesirable cipher suites disabled by default when using SSL/TLS. | | |
-|                                                                                                |Endpoint identification algorithms for LDAPS enabled by default. | | |
-|                                                                                                |Fields that contain confidential information are no longer returned in some API calls.| | |
-|7.7 SP2|OpenSSL updated to 1.0.2t-fips to fix security vulnerabilities. | |21/12/2019 |
-|7.7 SP1| | |29/08/2019 |
-|[7.7](/docs/apim_relnotes/201904_release/)|Traffic monitor enhancements.|Support for MySQL Server 2005 has been removed.|12/04/2019 |
-|                                                                                                |Filter JMS transactions by custom property in Traffic Monitor.| | |
-|                                                                                                |Entity Explorer added to API Gateway client tools installer.| | |
-|                                                                                                |Elastic topology container deployment enhancements.| | |
+|                                                                                                |The Groovy version used by the Scripting Filter is updated to 2.5.13. | | | |
+|[7.7.20200730](/docs/apim_relnotes/20200730_apimgr_relnotes/)|ICAP filter improvements. | | |30/07/2020 |
+|                                                                                                |Improved upgrade instructions. | | | |
+|                                                                                                |MSSQL Database Support. | | | |
+|[7.7.20200530](/docs/apim_relnotes/20200530_apimgr_relnotes/)|Updated OS Support. | | |30/05/2020 |
+|                                                                                                |Improved upgrade experience. | | | |
+|                                                                                                |Log4j file format changed to YAML. | | | |
+|                                                                                                |Swagger parser libs updated. | | | |
+|[7.7.20200330](/docs/apim_relnotes/20200330_apimgr_relnotes/)|Added TLS 1.3 support. | |FIPS support was removed. |30/03/2020 |
+|                                                                                                |OpenSSL updated to v1.1.1. | |McAfee Sophos Clam AV embedded antivirus scanners were removed.||
+|[7.7.20200130](/docs/apim_relnotes/20200130_apimgr_relnotes/)|Swagger 2.0 enhancements. | |API Tester was removed from installation.|30/01/2020 |
+|                                                                                                |Open API Specification (OAS) 3.0 enhancements. | |RAML support was removed.| |
+|                                                                                                |Try it improvements. | |Export of back-end APIs is not supported for OAS3 or WSDL APIs.| |
+|                                                                                                |Usage tracking improvements. | |Documentation is no longer provided in PDF format.| |
+|                                                                                                |Back-end API improvements. | | | |
+|                                                                                                |API documentation enhancements. | | | |
+|                                                                                                |Multi organization (beta). | | | |
+|                                                                                                |Increased validation of WSDLs. | | | |
+|                                                                                                |Filebeat updated to v6.2.2. | | | |
+|                                                                                                |Increased validation of users endpoint. | | | |
+|                                                                                                |Undesirable cipher suites disabled by default when using SSL/TLS. | | | |
+|                                                                                                |Endpoint identification algorithms for LDAPS enabled by default. | | | |
+|                                                                                                |Fields that contain confidential information are no longer returned in some API calls.| | | |
+|7.7 SP2|OpenSSL updated to 1.0.2t-fips to fix security vulnerabilities. | | |21/12/2019 |
+|7.7 SP1| | | |29/08/2019 |
+|[7.7](/docs/apim_relnotes/201904_release/)|Traffic monitor enhancements.| |Support for MySQL Server 2005 has been removed.|12/04/2019 |
+|                                                                                                |Filter JMS transactions by custom property in Traffic Monitor.| | | |
+|                                                                                                |Entity Explorer added to API Gateway client tools installer.| | | |
+|                                                                                                |Elastic topology container deployment enhancements.| | | |
 
 ## Version 7.6.2
 
