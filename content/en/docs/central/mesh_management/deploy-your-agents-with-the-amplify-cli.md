@@ -290,7 +290,7 @@ If you chose to create a new k8s cluster, enter a name and press `enter`.
 
 ```bash
 Enter a new k8s Cluster name:  test-cluster
-Creating a new Environment
+Creating a new k8s Cluster
 New k8scluster "test-cluster" has been successfully created.
 ```
 
