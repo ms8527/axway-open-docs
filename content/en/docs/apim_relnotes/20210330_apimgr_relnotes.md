@@ -77,8 +77,17 @@ The product is now certified as compatible with MySQL 8. For more information se
 
 This update includes bug fixes and enhanced functionality for YAML configuration as follows:
 
-* placeholder.
-* placeholder.
+* YAML configuration templates.
+* Add support for YAML configuration in Topology API.
+* Support for YAML configuration in multi-node topology.
+* Entities with same key fields at the same hierarchy level is now fully supported.
+* CLI import sub-command now comes with new options to relax some constraint and facilitate import.
+
+*Important*: Note that the notation system has changed for externalized files.
+
+* January 21 version: `script#ref: Test-Files/Set Return Message.html`
+
+* March 21 version: `script: '{{file "Test-Files/Set Return Message.html"}}'`
 
 See the [September 2020](/docs/apim_relnotes/20200930_apimgr_relnotes/#yaml-configuration-store-technical-preview-capability) release notes for an overview of this technical preview, and the [YAML configuration](/docs/apim_yamles/) documentation for more detailed information.
 
