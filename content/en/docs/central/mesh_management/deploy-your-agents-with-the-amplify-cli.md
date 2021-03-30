@@ -47,14 +47,14 @@ If you are a member of multiple Amplify organizations, select an organization an
     axway central install agents
     ```
 
-   The installation displays the following prompts.
+    The installation displays the following prompts.
 
-   ```bash
-   Select the type of gateway you want to connect:
-   API Gateway v7
-   Amazon API Gateway
-   Kubernetes
-   ```
+    ```bash
+    Select the type of gateway you want to connect:
+    API Gateway v7
+    Amazon API Gateway
+    Kubernetes
+    ```
 
 2. Select `Kubernetes` as your gateway. The next prompt asks if you already have Istio installed.
 
