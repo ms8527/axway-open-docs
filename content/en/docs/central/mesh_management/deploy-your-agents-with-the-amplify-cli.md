@@ -268,12 +268,12 @@ The following prompts are related to the details about the Axway Istio agents.
 
 After the details of the DOSA account have been provided, you are prompted to either create an environment resource in Amplify Central or provide the name of an existing environment resource. The environment will hold the Kubernetes resources that were found by the discovery agent.
 
- ```bash
- Create a new environment
- ──────────────
- mesh-env
- ──────────────
- ```
+```bash
+Create a new environment
+──────────────
+mesh-env
+──────────────
+```
 
 If you chose to create a new environment, enter a name and press `enter`.
 
