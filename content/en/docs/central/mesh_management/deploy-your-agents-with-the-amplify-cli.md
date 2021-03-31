@@ -153,7 +153,6 @@ Created secret/gateway-cert in the istio-system namespace.
     Enter the file path to the certificate: /Users/axway/certificate.crt
     Created secret/gateway-cert in the istio-system namespace.
     ```
-
    The CLI will create the secret in the `istio-system` namespace.
 
 ## Select the agents to install
@@ -189,7 +188,7 @@ The following prompts are related to the details about the Axway Istio agents.
     kube-node-lease
     ```
 
-   In this example we will create a new namespace.
+    In this example we will create a new namespace.
 
     ```bash
     Enter a new namespace name: (apic-control)
