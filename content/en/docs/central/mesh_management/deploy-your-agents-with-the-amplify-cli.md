@@ -153,7 +153,7 @@ Created secret/gateway-cert in the istio-system namespace.
     Enter the file path to the certificate: /Users/axway/certificate.crt
     Created secret/gateway-cert in the istio-system namespace.
     ```
-   The CLI will create the secret in the `istio-system` namespace.
+    The CLI will create the secret in the `istio-system` namespace.
 
 ## Select the agents to install
 
@@ -268,12 +268,12 @@ The following prompts are related to the details about the Axway Istio agents.
 
 After the details of the DOSA account have been provided, you are prompted to either create an environment resource in Amplify Central or provide the name of an existing environment resource. The environment will hold the Kubernetes resources that were found by the discovery agent.
 
- ```bash
- Create a new environment
- ──────────────
- mesh-env
- ──────────────
- ```
+  ```bash
+  Create a new environment
+  ──────────────
+  mesh-env
+  ──────────────
+  ```
 
 If you chose to create a new environment, enter a name and press `enter`.
 
@@ -338,45 +338,45 @@ helm upgrade --install --namespace apic-control apic-hybrid axway/apicentral-hyb
 
 1. After the installation is complete, run the command below with the namespace you selected for the Istio agent location and confirm that the pods are all in a running status.
 
-   ```bash
-   kgp -n apic-control
-   NAME                               READY   STATUS    RESTARTS   AGE
-   apic-hybrid-ada-bc5fcd58-6ghvb     1/1     Running   0          18s
-   apic-hybrid-als-76b499bc7c-d4566   1/1     Running   0          17s
-   apic-hybrid-als-76b499bc7c-rgtqb   1/1     Running   0          17s
-   apic-hybrid-rda-64cfdb558b-7kz2s   1/1     Running   0          17s
-   ```
+    ```bash
+    kgp -n apic-control
+    NAME                               READY   STATUS    RESTARTS   AGE
+    apic-hybrid-ada-bc5fcd58-6ghvb     1/1     Running   0          18s
+    apic-hybrid-als-76b499bc7c-d4566   1/1     Running   0          17s
+    apic-hybrid-als-76b499bc7c-rgtqb   1/1     Running   0          17s
+    apic-hybrid-rda-64cfdb558b-7kz2s   1/1     Running   0          17s
+    ```
 
 2. The `apicentral-hybrid` helm installation creates a namespace named `apic-demo` and deploys a service called `apic-hybrid-list`. Run the following command to verify this demo service is running.
 
-   ```bash
-   kgp -n apic-demo
-   NAME                                READY   STATUS    RESTARTS   AGE
-   apic-hybrid-list-598f8f9b4b-9wsc6   2/2     Running   0          90s
-   ```
+    ```bash
+    kgp -n apic-demo
+    NAME                                READY   STATUS    RESTARTS   AGE
+    apic-hybrid-list-598f8f9b4b-9wsc6   2/2     Running   0          90s
+    ```
 
 3. The installation creates resources, which provide configuration to the API Discovery Agent and the Resource Discovery Agent. You can use the Axway CLI to verify the agents are configured and running, and to list the resources that are expect to exist as a result of the agents discovering the `apic-hybrid-list` service.
 
-   ```bash
-   axway central get apispecs -s mesh-demo
-   ✔ Resource(s) has successfully been retrieved
+    ```bash
+    axway central get apispecs -s mesh-demo
+    ✔ Resource(s) has successfully been retrieved
 
-   NAME              AGE            TITLE   SCOPE KIND  SCOPE NAME
-   mylist100swagger  5 minutes ago  mylist  K8SCluster  mesh-demo
-   ```
+    NAME              AGE            TITLE   SCOPE KIND  SCOPE NAME
+    mylist100swagger  5 minutes ago  mylist  K8SCluster  mesh-demo
+    ```
 
    If you see one resource after running this command, that confirms that the API Discovery Agent is working.
 
-   ```bash
-   axway central get k8sresources -s mesh-demo
-   ✔ Resource(s) has successfully been retrieved
+    ```bash
+    axway central get k8sresources -s mesh-demo
+    ✔ Resource(s) has successfully been retrieved
 
-   NAME                                             AGE            TITLE                      SCOPE KIND  SCOPE NAME
-   service.apic-demo.apic-hybrid-list               6 minutes ago  service-cli-1605812140608  K8SCluster  mesh-demo
-   pod.apic-demo.apic-hybrid-list-598f8f9b4b-9wsc6  6 minutes ago  pod-cli-1605812140608      K8SCluster  mesh-demo
-   ```
+    NAME                                             AGE            TITLE                      SCOPE KIND  SCOPE NAME
+    service.apic-demo.apic-hybrid-list               6 minutes ago  service-cli-1605812140608  K8SCluster  mesh-demo
+    pod.apic-demo.apic-hybrid-list-598f8f9b4b-9wsc6  6 minutes ago  pod-cli-1605812140608      K8SCluster  mesh-demo
+    ```
 
-   If you see two resources after running this command, that confirms that the Resource Discovery Agent is working.
+    If you see two resources after running this command, that confirms that the Resource Discovery Agent is working.
 
 ## Where to go next
 
