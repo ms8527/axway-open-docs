@@ -70,11 +70,11 @@ If you are a member of multiple Amplify organizations, select an organization an
 
 2. Select from the list the namespace that the ingress-gateway is running in.
 
-   ```bash
-   ? Select the namespace where the Istio ingress gateway is running:
-     default
-   ❯ istio-system
-   ```
+    ```bash
+    ? Select the namespace where the Istio ingress gateway is running:
+      default
+    ❯ istio-system
+    ```
 
 The rest of the prompts relate to the Istio agents. Continue on with the section [Select the agents to install](#select-the-agents-to-install).
 
