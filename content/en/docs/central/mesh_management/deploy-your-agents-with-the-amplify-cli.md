@@ -62,11 +62,11 @@ If you are a member of multiple Amplify organizations, select an organization an
 
 1. If Istio is already installed in your cluster, select 'Yes'.
 
-   ```bash
-   ? Use existing Istio installation?:  (Use arrow keys)
-   ❯ Yes
-     No
-   ```
+    ```bash
+    ? Use existing Istio installation?:  (Use arrow keys)
+    ❯ Yes
+      No
+    ```
 
 2. Select from the list the namespace that the ingress-gateway is running in.
 
