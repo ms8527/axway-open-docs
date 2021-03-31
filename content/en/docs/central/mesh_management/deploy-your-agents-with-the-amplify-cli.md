@@ -90,23 +90,23 @@ The rest of the prompts relate to the Istio agents. Continue on with the section
 
 2. Enter the domain name of the cluster. If you do not know the domain name for the cluster at this time, leave the prompt blank and you will not be asked any details about the protocol, port, or certificate.
 
-   ```bash
-   Enter the public domain name for your cluster (FQDN), if available. (leave blank to skip):
-   ```
+    ```bash
+    Enter the public domain name for your cluster (FQDN), if available. (leave blank to skip):
+    ```
 
 3. Enter the protocol to use for the Istio gateway:
 
-   ```bash
-   Enter the protocol to use for the ingress gateway:
-   HTTP
-   HTTPS
-   ```
+    ```bash
+    Enter the protocol to use for the ingress gateway:
+    HTTP
+    HTTPS
+    ```
 
 4. Enter the port on which you want to expose the gateway. If you choose `HTTPS`, the default port is `443`. If you choose `HTTP`, the default port is `8080`.
 
-   ```bash
-   Enter the Kubernetes cluster port: (443)
-   ```
+    ```bash
+    Enter the Kubernetes cluster port: (443)
+    ```
 
 5. Enter the name of the Kubernetes secret to store the certificate. By default, Istio is deployed in the `istio-system` namespace, and the secret for the gateway certificate is saved to this namespace. The creation of this namespace is handled by the deployment of Istio, if it does not exists yet.
 
@@ -116,7 +116,7 @@ The rest of the prompts relate to the Istio agents. Continue on with the section
 
 6. Choose if you would like to generate a self-signed certificate or provide your own certificate.
 
-   If you choose to generate a certificate, the Axway CLI will use OpenSSL to create the private key and the certificate, which will be placed in the current directory where you are running the Axway CLI. If you choose to provide an existing certificate, you will be prompted with the file path to the private key and the certificate.
+    If you choose to generate a certificate, the Axway CLI will use OpenSSL to create the private key and the certificate, which will be placed in the current directory where you are running the Axway CLI. If you choose to provide an existing certificate, you will be prompted with the file path to the private key and the certificate.
 
 ### Generate a self-signed certificate
 
@@ -124,11 +124,11 @@ The rest of the prompts relate to the Istio agents. Continue on with the section
 
 2. Press `enter`.
 
-   ```bash
-   Would you like to generate a self signed certificate, or provide your own?: (Use arrow keys)
-   Generate self signed certificate
-   Provide certificate
-   ```
+    ```bash
+    Would you like to generate a self signed certificate, or provide your own?: (Use arrow keys)
+    Generate self signed certificate
+    Provide certificate
+    ```
 
 The console displays two lines of text indicating that the certificate and key were created and that a Kubernetes secret was created in the `istio-system` namespace.
 
@@ -146,13 +146,13 @@ Created secret/gateway-cert in the istio-system namespace.
 
 3. Provide the path for both the private key and the certificate. Note that the path is relative to the directory where you invoked the Axway Central CLI command from. If your certificate and key are stored in another directory from where you are running the CLI, then you must provide the full path to the files.
 
-   ```bash
-   Enter the name of the secret to store the Istio gateway certificate: gateway-cert
-   Would you like to generate a self signed certificate, or provide your own?: Provide certificate
-   Enter the file path to the private key: /Users/axway/private_key.key
-   Enter the file path to the certificate: /Users/axway/certificate.crt
-   Created secret/gateway-cert in the istio-system namespace.
-   ```
+    ```bash
+    Enter the name of the secret to store the Istio gateway certificate: gateway-cert
+    Would you like to generate a self signed certificate, or provide your own?: Provide certificate
+    Enter the file path to the private key: /Users/axway/private_key.key
+    Enter the file path to the certificate: /Users/axway/certificate.crt
+    Created secret/gateway-cert in the istio-system namespace.
+    ```
 
    The CLI will create the secret in the `istio-system` namespace.
 
@@ -162,12 +162,12 @@ The following prompts are related to the details about the Axway Istio agents.
 
 1. Select what you would like to install. You can install only one of the agents, or both. The Discovery agent option deploys the API Discovery Agent and the Resource Discovery Agent.
 
-   ```bash
-   Select which agents to install: (Use arrow keys)
-   All agents
-   Discovery agent
-   Traceability agent
-   ```
+    ```bash
+    Select which agents to install: (Use arrow keys)
+    All agents
+    Discovery agent
+    Traceability agent
+    ```
 
    If you choose to deploy Traceability agent, select the mode in which you want the Traceability Agent to run.
 
@@ -181,19 +181,19 @@ The following prompts are related to the details about the Axway Istio agents.
 
 2. Enter the namespace where you would like to deploy the agents or accept the default option by pressing `enter`. The CLI collects a list of all your existing namespaces and provides an option to deploy to one of those. You can also choose to create a new Kubernetes namespace and deploy there instead.
 
-   ```bash
-   Create a new namespace
-   ──────────────
-   default
-   istio-system
-   kube-node-lease
-   ```
+    ```bash
+    Create a new namespace
+    ──────────────
+    default
+    istio-system
+    kube-node-lease
+    ```
 
    In this example we will create a new namespace.
 
-   ```bash
-   Enter a new namespace name: (apic-control)
-   ```
+    ```bash
+    Enter a new namespace name: (apic-control)
+    ```
 
 3. After the namespace is created, you are asked for the DevOps Service Account (DOSA) to use, so the agents can authenticate with Amplify Central. You can create a new DOSA account or select an existing one.
 
@@ -203,78 +203,78 @@ The following prompts are related to the details about the Axway Istio agents.
 
 1. Select `Create a new account` and press `enter`.
 
-   ```bash
-   Select a service account (DOSA): (Use arrow keys)
-   Create a new account
-   ──────────────
-   mesh
-   ──────────────
-   ```
+    ```bash
+    Select a service account (DOSA): (Use arrow keys)
+    Create a new account
+    ──────────────
+    mesh
+    ──────────────
+    ```
 
 2. Enter a name for the new DOSA account. Creating a new DOSA account will override any file named `public_key.pem` or `private_key.pem` in the directory where you invoked the Axway Central CLI from.
 
-   ```bash
-   Select a service account (DOSA):  Create a new account
-   WARNING: Creating a new DOSA account will overwrite any existing "private_key.pem" and "public_key.pem" files in this directory
-   Enter a new service account name:  mesh-dosa
-   ```
+    ```bash
+    Select a service account (DOSA):  Create a new account
+    WARNING: Creating a new DOSA account will overwrite any existing "private_key.pem" and "public_key.pem" files in this directory
+    Enter a new service account name:  mesh-dosa
+    ```
 
-   After you enter the name of the account and press `enter`, an output is shown with the client ID of the account and the directory where the keys were placed.
+    After you enter the name of the account and press `enter`, an output is shown with the client ID of the account and the directory where the keys were placed.
 
-   ```bash
-   Enter a new service account name: mesh-dosa
-   Creating a new service account.
-   New service account "mesh-dosa" with clientId "DOSA_cb46caebd35f4e8689b56ee5f813b576" has been successfully created.
-   The private key has been placed at /Users/axway/private_key.pem
-   The public key has been placed at /Users/axway/public_key.pem
-   ```
+    ```bash
+    Enter a new service account name: mesh-dosa
+    Creating a new service account.
+    New service account "mesh-dosa" with clientId "DOSA_cb46caebd35f4e8689b56ee5f813b576" has been successfully created.
+    The private key has been placed at /Users/axway/private_key.pem
+    The public key has been placed at /Users/axway/public_key.pem
+    ```
 
 3. Enter a name for the Kubernetes secret to store the keys. The CLI creates the secret automatically in the namespace that you selected for the Istio agent installation.
 
-   ```bash
-   The secret will be created with the same `private_key.pem` and `public_key.pem` that was auto generated to create the DOSA Account.
-   Enter the name of the secret to store your public and private keys: (agent-secrets)
-   Created agent-secrets in the apic-control namespace.
-   ```
+    ```bash
+    The secret will be created with the same `private_key.pem` and `public_key.pem` that was auto generated to create the DOSA Account.
+    Enter the name of the secret to store your public and private keys: (agent-secrets)
+    Created agent-secrets in the apic-control namespace.
+    ```
 
 ### Use an existing DOSA account
 
 1. Select the DOSA account from the list and press `enter`.
 
-   ```bash
-   Select a service account (DOSA):  (Use arrow keys)
-   Create a new account
-   ──────────────
-   mesh
-   ──────────────
-   ```
+    ```bash
+    Select a service account (DOSA):  (Use arrow keys)
+    Create a new account
+    ──────────────
+    mesh
+    ──────────────
+    ```
 
 2. Enter the keys that were used to create the account. They must be the **same** keys that were used to create this DOSA account. It is recommended to provide the full file path to the location of the keys.
 
-   ```bash
-   Select a service account (DOSA):  mesh
-   Please provide the the same "private_key.pem" and "public_key.pem" that was used to create the selected DOSA Account.
-   Enter the file path to the public key:  /Users/axway/public_key.pem
-   Enter the file path to the private key:  /Users/axway/private_key.pem
-   ```
+    ```bash
+    Select a service account (DOSA):  mesh
+    Please provide the the same "private_key.pem" and "public_key.pem" that was used to create the selected DOSA Account.
+    Enter the file path to the public key:  /Users/axway/public_key.pem
+    Enter the file path to the private key:  /Users/axway/private_key.pem
+    ```
 
 3. Enter the name of the Kubernetes secret that will store the keys. The Axway CLI will create the Kubernetes secret for you in the namespace you selected for the Istio agent installation.
 
-   ```bash
-   Enter the name of the secret to store your public and private keys:  (agent-secrets)
-   Created agent-secrets in the apic-control namespace.
-   ```
+    ```bash
+    Enter the name of the secret to store your public and private keys:  (agent-secrets)
+    Created agent-secrets in the apic-control namespace.
+    ```
 
 ## Provide an environment resource
 
 After the details of the DOSA account have been provided, you are prompted to either create an environment resource in Amplify Central or provide the name of an existing environment resource. The environment will hold the Kubernetes resources that were found by the discovery agent.
 
-```bash
-Create a new environment
-──────────────
-mesh-env
-──────────────
-```
+ ```bash
+ Create a new environment
+ ──────────────
+ mesh-env
+ ──────────────
+ ```
 
 If you chose to create a new environment, enter a name and press `enter`.
 
